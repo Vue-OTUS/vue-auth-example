@@ -1,6 +1,7 @@
 <template>
   <div class="relative">
     <input
+      v-model="model"
       id="password"
       required
       :type="showPassword ? 'text' : 'password'"
@@ -42,4 +43,6 @@
 import { ref } from 'vue'
 
 const showPassword = ref(false)
+
+const model = defineModel()
 </script>

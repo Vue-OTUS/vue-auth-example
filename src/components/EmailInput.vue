@@ -2,6 +2,7 @@
   <div>
     <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email address</label>
     <input
+      v-model="model"
       id="email"
       type="email"
       required
@@ -11,4 +12,6 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const model = defineModel()
+</script>

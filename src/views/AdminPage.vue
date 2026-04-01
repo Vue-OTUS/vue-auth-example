@@ -1,8 +1,7 @@
-<template>
-  <AppLayout><UserStarIcon :size="72" /> Admin page</AppLayout>
-</template>
+<template><UserStarIcon :size="72" /> Admin page</template>
 
 <script setup lang="ts">
-import AppLayout from '@/layouts/AppLayout.vue'
 import { UserStarIcon } from '@lucide/vue'
+
+console.log('Visited admin component')
 </script>

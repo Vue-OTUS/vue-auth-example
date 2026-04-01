@@ -16,8 +16,11 @@
 </template>
 
 <script setup lang="ts">
+import { useAuthStore } from '@/stores/auth'
+import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 
-const name = 'Пользователь'
-const letter = computed(() => name.substring(0, 1))
+const { name } = storeToRefs(useAuthStore())
+
+const letter = computed(() => (name.value ?? 'A').substring(0, 1))
 </script>
