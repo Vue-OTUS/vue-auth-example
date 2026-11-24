@@ -3,6 +3,7 @@
     <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email address</label>
     <input
       id="email"
+      v-model="model"
       type="email"
       required
       placeholder="email@example.com"
@@ -11,4 +12,6 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const model = defineModel<string>()
+</script>

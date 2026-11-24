@@ -2,6 +2,7 @@
   <div class="relative">
     <input
       id="password"
+      v-model="model"
       required
       :type="showPassword ? 'text' : 'password'"
       placeholder="Password"
@@ -42,4 +43,6 @@
 import { ref } from 'vue'
 
 const showPassword = ref(false)
+
+const model = defineModel<string>()
 </script>

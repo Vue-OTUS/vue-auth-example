@@ -7,15 +7,14 @@
       </div>
 
       <form class="bg-white">
-        <EmailInput class="mb-4" />
+        <EmailInput class="mb-4" v-model="email" />
 
         <div class="mb-2 flex items-center justify-between">
           <label for="password" class="text-sm font-medium text-gray-700">Password</label>
           <a href="#" class="text-sm text-gray-500 hover:text-gray-700">Forgot password?</a>
         </div>
 
-        <PasswordInput class="mb-4" />
-
+        <PasswordInput class="mb-4" v-model="password" />
         <div class="mb-6 flex items-center">
           <input
             id="remember"
@@ -46,4 +45,8 @@
 <script setup lang="ts">
 import EmailInput from '@/components/EmailInput.vue'
 import PasswordInput from '@/components/PasswordInput.vue'
+import { ref } from 'vue'
+
+const email = ref('')
+const password = ref('')
 </script>
