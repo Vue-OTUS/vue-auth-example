@@ -26,7 +26,7 @@
 
         <div class="mb-4">
           <button
-            type="submit"
+            @click.prevent="tryLogin"
             class="w-full bg-gray-800 text-white py-3 rounded-md text-sm font-medium hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-600 cursor-pointer"
           >
             Log in
@@ -45,8 +45,24 @@
 <script setup lang="ts">
 import EmailInput from '@/components/EmailInput.vue'
 import PasswordInput from '@/components/PasswordInput.vue'
+import { login } from '@/services/loginService'
+import { useAuthStore } from '@/stores/authStore'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 const email = ref('')
 const password = ref('')
+
+const authStore = useAuthStore()
+
+const router = useRouter()
+
+function tryLogin() {
+  login(email.value, password.value)
+    .then((jwt) => {
+      authStore.setJwt(jwt)
+      router.push({ name: 'home' })
+    })
+    .catch((err) => alert(err.message))
+}
 </script>

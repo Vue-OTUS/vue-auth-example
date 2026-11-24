@@ -10,14 +10,16 @@
           >{{ letter }}</span
         >
       </div>
-      <div>{{ name }}</div>
+      <div>{{ authStore.userName }}</div>
     </div>
   </RouterLink>
 </template>
 
 <script setup lang="ts">
+import { useAuthStore } from '@/stores/authStore'
 import { computed } from 'vue'
 
-const name = 'Пользователь'
-const letter = computed(() => name.substring(0, 1))
+const authStore = useAuthStore()
+
+const letter = computed(() => authStore.userName.substring(0, 1))
 </script>

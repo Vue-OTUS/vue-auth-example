@@ -1,8 +1,8 @@
-<template>
-  <AppLayout><UserPenIcon :size="72" /> Profile page</AppLayout>
-</template>
+<template><UserPenIcon :size="72" /> Profile page {{ authStore.userName }}</template>
 
 <script setup lang="ts">
-import AppLayout from '@/layouts/AppLayout.vue'
+import { useAuthStore } from '@/stores/authStore'
 import { UserPenIcon } from '@lucide/vue'
+
+const authStore = useAuthStore()
 </script>

@@ -1,8 +1,8 @@
-<template>
-  <AppLayout><UserStarIcon :size="72" /> Admin page</AppLayout>
-</template>
+<template><UserStarIcon :size="72" /> Admin page for {{ authStore.userName }}</template>
 
 <script setup lang="ts">
-import AppLayout from '@/layouts/AppLayout.vue'
+import { useAuthStore } from '@/stores/authStore'
 import { UserStarIcon } from '@lucide/vue'
+
+const authStore = useAuthStore()
 </script>
